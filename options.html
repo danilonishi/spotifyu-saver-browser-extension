@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spotify Saver Extension Settings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="options">
+    <main>
+        <h1>Spotify Saver settings</h1>
+        <form id="settings-form">
+            <label for="service-url">Spotify Saver application address</label>
+            <input id="service-url" name="service-url" type="url" required
+                placeholder="https://spotify-saver.example.com" autocomplete="url">
+            <p class="help-text">Enter the application root reachable from this browser. Use http://127.0.0.1:8000 only when Spotify Saver runs on this same computer; prefer HTTPS for remote instances.</p>
+            <button type="submit">Save address</button>
+            <p id="save-status" role="status" aria-live="polite"></p>
+        </form>
+        <section aria-labelledby="site-access-heading">
+            <h2 id="site-access-heading">Automatic window closing</h2>
+            <p class="help-text">Allow access to the configured Spotify Saver site so the extension can detect a successful download and close its popup window.</p>
+            <button id="site-access-button" type="button">Grant site access</button>
+            <p id="site-access-status" role="status" aria-live="polite"></p>
+        </section>
+    </main>
+    <script type="module" src="options.js"></script>
+</body>
+</html>
